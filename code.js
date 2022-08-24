@@ -77,30 +77,29 @@ function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
 
 
-  for(var tarjeta of listado){
+  const materias = document.getElementById('fila')
 
+listado.forEach(materia =>{
 
-  
-  }
-  
+  materias.innerHTML += `
+  <div class="caja">
+  <img src = "${materia.imgUrl}" alt = "${materia.lenguajes}">
+  <p class = "lenguajes"> Lenguajes: ${materia.lenguajes}</p> 
+  <p class = "bimestre"> Bimestre: ${materia.bimestre}</p>
+  </div>
+  `
+ 
+})
+
+ materiasBtn.disabled = true; 
 
 
 }
 
 function alternarColorTema() {
   /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
- 
 
-let sitio = document.getElementById('sitio')
-
-if(sitio.classList.contains("dark")){
-  sitio.classList.remove('dark')
-
-}
-else{
-  sitio.classList.add('dark')
-
-}
+document.getElementById('sitio').classList.toggle('dark')
 
 }
 
@@ -111,12 +110,10 @@ document.addEventListener('keypress',function(e){
 
   let sobreMi = document.getElementById('sobre-mi')
 
-  if(e.key == 'f' && sobreMi.classList.contains("oculto")){
+  if(e.key == 'f' || e.key == 'F' && sobreMi.classList.contains("oculto")){
     sobreMi.classList.remove('oculto')
   }
   
-
-
 })
 
 
